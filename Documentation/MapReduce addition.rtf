@@ -1,0 +1,85 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red26\green27\blue29;\red26\green27\blue29;
+}
+\margl1440\margr1440\vieww14400\viewh11400\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 The file we have looks like follows:\
+(A, B are the input matrices)\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 +---------------------------------+\
+|  i  |  j  |  value  |   matrix  |\
++---------------------------------+\
+|  1  |  1  |    X    |     A     |\
+|  1  |  2  |    X    |     A     |\
+|     |     |         |           |\
+| ... | ... |   ...   |    ...    |\
+|     |     |         |           |\
+|  1  |  1  |    X    |     B     |\
+|  1  |  2  |    X    |     B     |\
+|     |     |         |           |\
+| ... | ... |   ...   |    ...    |\
+|     |     |         |           |\
++---------------------------------+\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \
+After addition of the two matrices, we expect to see another matrix C, which can be written in this files. We have:\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf4 \outl0\strokewidth0 +---------------------------------+\
+|  i  |  j  |  value  |   matrix  |\
++---------------------------------+\
+|  1  |  1  |    X    |     A     |\
+|  1  |  2  |    X    |     A     |\
+|     |     |         |           |\
+| ... | ... |   ...   |    ...    |\
+|     |     |         |           |\
+|  1  |  1  |    X    |     B     |\
+|  1  |  2  |    X    |     B     |\
+|     |     |         |           |\
+| ... | ... |   ...   |    ...    | \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf4 |     |     |         |           |\
+|  1  |  1  |    X    |     C     |\
+|  1  |  2  |    X    |     C     |\
+|     |     |         |           |\
+| ... | ... |   ...   |    ...    |\cf4 \
++---------------------------------+\cf2 \outl0\strokewidth0 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 function Map (input is a single row of the file from above):\
+\
+    i = row[0]\
+    j = row[1]\
+    value  = row[2]\
+    matrix = row[3]\
+\
+    if(matrix == 'A')\
+        emit((i,j), \{i, j, value, 'A'\})\
+    else\
+        emit((i,j), \{i, j, value, 'B'\})\
+\
+function Reduce(Key, List of tuples from the Map function):\
+\
+    Matrix_A_tuples = \
+        filter( List of tuples from the Map function, where matrix == 'A' )\
+\
+    Matrix_B_tuples = \
+        filter( List of tuples from the Map function, where matrix == 'B' )\
+\
+    for each tuple_A from Matrix_A_tuples\
+        i = tuple_A[0]\
+        value_A = tuple_A[1]\
+\
+        for each tuple_B from Matrix_B_tuples\
+            j = tuple_B[0]\
+            value_B = tuple_B[1]\
+\
+            emit(\{i, j\}, \{value_A + value_b, 'C'\})\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \
+}
