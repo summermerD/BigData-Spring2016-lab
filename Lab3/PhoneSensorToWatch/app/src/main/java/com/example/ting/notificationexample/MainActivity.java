@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         mAcc = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
@@ -45,15 +45,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         mSensorManager.registerListener(this, mAcc, SensorManager.SENSOR_DELAY_NORMAL);
         mSensorManager.registerListener(this, mLight, SensorManager.SENSOR_DELAY_NORMAL);
         mSensorManager.registerListener(this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this, mMagnetic,SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mMagnetic, SensorManager.SENSOR_DELAY_NORMAL);
 
         textView = (TextView) findViewById(R.id.text);
         Acc = (TextView) findViewById(R.id.textView);
         Lig = (TextView) findViewById(R.id.textView3);
         Pro = (TextView) findViewById(R.id.textView5);
         Mag = (TextView) findViewById(R.id.textView7);
-
-
 
 
         Button wearButtonMag = (Button) findViewById(R.id.wearButtonMag);
@@ -71,14 +69,64 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             }
         });
+
+
+        Button buttonWearLight= (Button) findViewById(R.id.buttonWearLight);
+        buttonWearLight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int notificationId = 100;
+                NotificationCompat.Builder notificatonBuilder = new NotificationCompat.Builder(MainActivity.this)
+                        .setSmallIcon(R.drawable.notificationicon)
+                        .setContentTitle("Light information")
+                        .setContentText(Lig.getText());
+                NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
+
+                notificationManagerCompat.notify(notificationId, notificatonBuilder.build());
+
+            }
+        });
+
+        Button buttonWearPro = (Button) findViewById(R.id.buttonWearPro);
+        buttonWearPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int notificationId = 100;
+                NotificationCompat.Builder notificatonBuilder = new NotificationCompat.Builder(MainActivity.this)
+                        .setSmallIcon(R.drawable.notificationicon)
+                        .setContentTitle("Proximity information")
+                        .setContentText(Pro.getText());
+                NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
+
+                notificationManagerCompat.notify(notificationId, notificatonBuilder.build());
+
+            }
+        });
+
+
+        Button buttonWearAcc = (Button) findViewById(R.id.buttonWearAcc);
+        buttonWearAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int notificationId = 100;
+                NotificationCompat.Builder notificatonBuilder = new NotificationCompat.Builder(MainActivity.this)
+                        .setSmallIcon(R.drawable.notificationicon)
+                        .setContentTitle("Accelerometer information")
+                        .setContentText(Acc.getText());
+                NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
+
+                notificationManagerCompat.notify(notificationId, notificatonBuilder.build());
+
+            }
+        });
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor == mAcc)
-            Acc.setText(event.values[0] + "," + event.values[1] + "," + event.values[2]);
+            Acc.setText(event.values[0] + ", " + event.values[1] + ", " + event.values[2]);
         if (event.sensor == mLight)
-            Lig.setText("" + event.values[0]);
+            Lig.setText(event.values[0] + "");
         if (event.sensor == mMagnetic)
             Mag.setText(event.values[0] + "");
         if (event.sensor == mProximity)
