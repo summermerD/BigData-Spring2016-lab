@@ -1,0 +1,194 @@
+[
+    {
+        "outputFile": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/build/intermediates/res/merged/debug/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 47,
+                    "endOffset": 98
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 130,
+                        "endColumn": 47,
+                        "endOffset": 173
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 103,
+                    "endColumn": 52,
+                    "endOffset": 151
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 156,
+                    "endColumn": 52,
+                    "endOffset": 204
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 209,
+                    "endColumn": 52,
+                    "endOffset": 257
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 262,
+                    "endColumn": 57,
+                    "endOffset": 315
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 320,
+                    "endColumn": 64,
+                    "endOffset": 380
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 385,
+                    "endColumn": 52,
+                    "endOffset": 433
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 438,
+                    "endColumn": 54,
+                    "endOffset": 488
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 493,
+                    "endColumn": 52,
+                    "endOffset": 541
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 546,
+                    "endColumn": 44,
+                    "endOffset": 586
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 591,
+                    "endColumn": 74,
+                    "endOffset": 661
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 666,
+                    "endColumn": 41,
+                    "endOffset": 703
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 708,
+                    "endColumn": 62,
+                    "endOffset": 766
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 771,
+                    "endColumn": 62,
+                    "endOffset": 829
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 834,
+                    "endColumn": 62,
+                    "endOffset": 892
+                },
+                "from": {
+                    "file": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/values/strings.xml"
+                }
+            }
+        ]
+    }
+]

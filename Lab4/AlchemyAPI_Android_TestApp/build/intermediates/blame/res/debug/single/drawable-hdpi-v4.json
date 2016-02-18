@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/build/intermediates/res/merged/debug/drawable-hdpi-v4/icon.png",
+        "source": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/drawable-hdpi/icon.png"
+    },
+    {
+        "merged": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/build/intermediates/res/merged/debug/drawable-hdpi-v4/kitten.jpg",
+        "source": "/Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/res/drawable-hdpi/kitten.jpg"
+    }
+]

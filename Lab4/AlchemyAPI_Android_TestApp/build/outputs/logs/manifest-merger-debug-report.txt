@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:3:7-39
+	android:versionName
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:5:7-32
+		INJECTED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml
+		INJECTED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml
+	android:versionCode
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:4:7-30
+		INJECTED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml
+		INJECTED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:7:2-78
+	android:name
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:7:19-75
+uses-sdk
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:8:5-10:41
+	android:targetSdkVersion
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:10:9-38
+	android:minSdkVersion
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:9:9-34
+application
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:12:5-21:19
+	android:label
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:12:48-80
+	android:debuggable
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:12:81-106
+	android:icon
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:12:18-47
+activity#com.alchemyapi.android.MainActivity
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:13:9-19:20
+	android:label
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:14:19-51
+	android:name
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:13:19-69
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:15:13-18:29
+action#android.intent.action.MAIN
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from /Users/Ting/Downloads/alchemyapi_android-master/example/AlchemyAPI_Android_TestApp/AndroidManifest.xml:17:27-74
