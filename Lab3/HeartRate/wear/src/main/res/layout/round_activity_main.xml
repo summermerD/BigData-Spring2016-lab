@@ -31,4 +31,12 @@
         android:id="@+id/wearButton"
         android:layout_below="@+id/step"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send steps"
+        android:id="@+id/wearButtonStep"
+        android:layout_below="@+id/wearButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

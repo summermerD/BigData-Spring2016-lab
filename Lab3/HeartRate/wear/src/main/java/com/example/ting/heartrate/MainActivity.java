@@ -52,12 +52,12 @@ public class MainActivity extends Activity implements SensorEventListener {
                 int notificationId = 100;
                 NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(MainActivity.this)
                         .setContentTitle("Heart Rate:")
-                        .setContentText(heart.getText())
-                        .setContentTitle("Step:")
-                        .setContentText(step.getText());
+                        .setContentText(heart.getText());
+
                 NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
 
                 notificationManagerCompat.notify(notificationId,notificationBuilder.build());
+
 
             }
         });
