@@ -1,0 +1,6 @@
+#Ratings (Prime Time)
+@Intratablestv 6,6 
+@TV_Publica 0,3
+@BenditaOK 4,4 
+#Fatmagul 11,5
+#Los8Escalones 10,8

@@ -1,0 +1,10 @@
+2::animal
+3::art
+4::book
+5::food
+6::movie
+7::music
+8::TV
+9::sport
+10::travel
+11::other
