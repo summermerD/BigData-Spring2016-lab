@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "/Users/Ting/Google Drive/CS 5542 Big data analytics/Lab8/CS5542-Tutorial 8 Code/Android Controller1/app/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "/Users/Ting/Google Drive/CS 5542 Big data analytics/Lab8/CS5542-Tutorial 8 Code/Android Controller1/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 310,
+                        "endColumn": 57,
+                        "endOffset": 363
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Ting/Google Drive/CS 5542 Big data analytics/Lab8/CS5542-Tutorial 8 Code/Android Controller1/G:\\Dropbox\\2016 Spring\\CS5542-BigDataAnalytics\\Tutorial\\Tutorial 8\\Android Controller1\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "/Users/Ting/Google Drive/CS 5542 Big data analytics/Lab8/CS5542-Tutorial 8 Code/Android Controller1/G:\\Dropbox\\2016 Spring\\CS5542-BigDataAnalytics\\Tutorial\\Tutorial 8\\Android Controller1\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 310,
+                        "endColumn": 57,
+                        "endOffset": 363
+                    }
+                }
+            }
+        ]
+    }
+]
