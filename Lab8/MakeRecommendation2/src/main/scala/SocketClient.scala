@@ -20,7 +20,7 @@ object SocketClient {
     try {
 
 
-      lazy val address: Array[Byte] = Array(192.toByte, 168.toByte, 1.toByte, 2.toByte)
+      lazy val address: Array[Byte] = Array(192.toByte, 168.toByte, 1.toByte, 5.toByte)
       val ia = InetAddress.getByAddress(address)
       val socket = new Socket(ia, 9999)
       val out = new PrintStream(socket.getOutputStream)

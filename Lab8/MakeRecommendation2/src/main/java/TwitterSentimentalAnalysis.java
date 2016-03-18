@@ -57,8 +57,8 @@ public class TwitterSentimentalAnalysis {
                 int category = twitterCategoryAnalysis.CategoryAnalysis();
 
                 int usrId = (int)((status.getId() >>> 32) ^ status.getId());
-                int time = (int)((status.getCreatedAt().getTime() >>> 32) ^ status.getCreatedAt().getTime());
-                a += usrId + "::" + Integer.toString(category) + "::" + Integer.toString(rate) + "::" + time + "\n";
+
+                a += usrId + "::" + Integer.toString(category) + "::" + Integer.toString(rate) + "::" + System.currentTimeMillis() / 1000 + "\n";
                 System.out.println(a);
 
             }

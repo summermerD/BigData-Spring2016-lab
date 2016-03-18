@@ -1,3 +1,4 @@
+import java.io.{IOException, FileWriter}
 import java.net.InetAddress
 import java.nio.file.{Files, Paths}
 import java.util.Calendar
@@ -8,6 +9,8 @@ import org.apache.spark.SparkConf
 import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+
+import scala.collection.mutable.ArrayBuffer
 
 /**
   * Created by Ting on 3/16/16.
@@ -35,36 +38,46 @@ object GetTestDataFromDevice {
     println("IP ADDRESS : :   " + SocketClient.findIpAdd())
 
     // Socket open for Testing Data
-    lazy val address: Array[Byte] = Array(192.toByte, 168.toByte, 1.toByte, 2.toByte)
+    lazy val address: Array[Byte] = Array(192.toByte, 168.toByte, 1.toByte, 5.toByte)
     val ia = InetAddress.getByAddress(address)
 
     val lines = ssc.socketTextStream(ia.getHostName, PORT_NUMBER, StorageLevel.MEMORY_ONLY)
 
-    var rate = 0
     val data = lines.map(line => {
       val test = createLabeledDocumentTest(line, labelToNumeric, stopWords)
       println(test.body)
-//      val doAnalysis: SentimentAnalyzer = new SentimentAnalyzer
-//      rate = doAnalysis.findSentiment(test.body).getRate
+
       test.body
     })
 
-    data.foreachRDD(rdd => {
-      val filteredRDD = rdd.filter(line => line.contains("data"))
-      val X_test = tfidfTransformerTest2(sc, filteredRDD)
-      val predictionAndLabel = model.predict(X_test)
-      println("PREDICTION")
 
-      predictionAndLabel.foreach(x => {
-        labelToNumeric.foreach { y => if (y._2 == x) {
-          println(y._1)
-          val toFile = "8888::" + y._2 + "::" + rate + "::" + Calendar.getInstance.getTime
-          println(toFile)
+    var rate = 0
+    data.foreachRDD(rdd => {
+      println(rdd.take(1))
+      if(rdd.take(1).length != 0) {
+        val X_test = tfidfTransformerTest2(sc, rdd)
+        val predictionAndLabel = model.predict(X_test)
+        println("PREDICTION")
+//        val doAnalysis: SentimentAnalyzer = new SentimentAnalyzer
+//        val rate = doAnalysis.findSentiment(rdd.toString())
+        val toFile = "8888::" + predictionAndLabel.first().toInt + "::" + rate + "::" + System.currentTimeMillis / 1000 + "\n"
+        println(toFile)
+        try {
+          val filename: String = "data/results/rating.txt"
+          val fw2: FileWriter = new FileWriter(filename, true)
+          fw2.write(toFile)
+          fw2.close
         }
+        catch {
+          case ioe: IOException => {
+            System.err.println("IOException: " + ioe.getMessage)
+          }
         }
-      })
+      }
+
     }
     )
+
 
     ssc.start()
     ssc.awaitTermination()
