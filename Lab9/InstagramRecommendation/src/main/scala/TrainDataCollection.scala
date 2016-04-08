@@ -24,7 +24,7 @@ object TrainDataCollection {
   @throws(classOf[Exception])
   def main(args: Array[String]) {
 
-    val tags = List("accordion", "airplanes", "anchor", "ant", "barrel", "bass", "beaver", "binocular", "bonsai")
+    val tags = List("dog", "cat", "mouse", "rabbit", "squirrel", "bird", "fox", "tortoise", "fish")
     var tagId: Map[String, Int] = Map()
     var count: Int = 1
     fileR.println("username;caption;tag;tagId;link")
