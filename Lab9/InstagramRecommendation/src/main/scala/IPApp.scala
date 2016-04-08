@@ -16,6 +16,7 @@ import org.bytedeco.javacpp.opencv_highgui._
 import sun.misc.BASE64Decoder
 
 import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 
 /**
   * Created by Ting on 3/24/16.
@@ -200,6 +201,7 @@ object IPApp {
       .setMaster("local[*]")
       .set("spark.executor.memory", "3g")
       .set("spark.driver.memory", "3g")
+      .set("spark.driver.allowMultipleContexts", "true")
     val ssc = new StreamingContext(conf, Seconds(2))
     val sc = ssc.sparkContext
 
@@ -230,17 +232,20 @@ object IPApp {
       */
     generateNaiveBayesModel(sc)
 
+    //    Get category from recommendation
+
     //    testImageClassification(sc)
 
-    val ip = InetAddress.getByName("10.113.0.109").getHostName
+    val ip = InetAddress.getByName("10.151.2.74").getHostName
 
     val lines = ssc.socketTextStream(ip, 9999)
 
-    var categoryToShow = ""
 //    Filtering out the non base64 strings
     val base64Strings = lines.filter(line => {
       Base64.isBase64(line)
     })
+
+    val recommendedCategory = RecommendationSystemNew.Recommend(2)
 
     val imgRdd = base64Strings.reduce(_+_)
 
@@ -265,34 +270,31 @@ object IPApp {
     imgRdd.foreachRDD(rdd => {
       val base64s = rdd.collect()
       for (base64 <- base64s) {
-          println(base64.length)
-          val bufferedImage = ImageIO.read(new ByteArrayInputStream(new BASE64Decoder().decodeBuffer(base64)))
-          val imgOutFile = new File("newLabel1.jpg")
+        println(base64.length)
+        val bufferedImage = ImageIO.read(new ByteArrayInputStream(new BASE64Decoder().decodeBuffer(base64)))
+        if(bufferedImage != null) {
+          val imgOutFile = new File("newLabel.jpg")
           val saved = ImageIO.write(bufferedImage, "jpg", imgOutFile)
           println("Saved : " + saved)
 
           if (saved) {
-            val category = classifyImage(rdd.context, "newLabel1.jpg")
-            categoryToShow = category.toString
+            val category = classifyImage(rdd.context, "newLabel.jpg")
+            if (recommendedCategory.contains(category))
+              socket.sendCommandToRobot("User's recommendation and image category are same:" + category + '\n')
+            else
+              socket.sendCommandToRobot("User's recommendation and image category are different. Image category:" + category + '\n' + "User recommendation: "  )
+
             println(category)
           }
-
+        }
       }
     })
 
-//    //Get category from recommendation
-//    val recommendedCategory = RecommendationSystemNew.Recommend(2)
-    if (true)
-      socket.sendCommandToRobot("User's recommendation and image category are same:" + categoryToShow + '\n')
-    else
-      socket.sendCommandToRobot("User's recommendation and image category are different. Image category" + categoryToShow + '\n' + "User recommendation: " )
-
-
+    imgRdd.cache()
 
     ssc.start()
 
-    ssc.awaitTermination(5000)
-    //    ssc.stop()
+    ssc.awaitTermination()
   }
 
 }
