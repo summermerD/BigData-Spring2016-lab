@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+       <script type="text/javascript"  src='script/general.js'></script>
+        <script type="text/javascript"  src='script/login.js'></script>
+
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+             <div id="register" class="login" >
+            <form method="POST" action = "server/register.php" enctype="multipart/form-data">
+                <h2 align="center" >User register</h2>
+            <div class="item">
+                <label> Username: </label> <input class="input" name="usrname" type="text">
+            </div>
+            <div class="item">
+                <label> First name: </label> <input class="input" name="fname" type="text">
+            </div>
+             <div class="item">
+                <label> Last name: </label> <input class="input" name="lname" type="text">
+            </div>
+            <div class="item">
+                <label> Email: </label> <input class="input" name="email" type="text">
+            </div>
+            <div class="item" >
+                <label> Password: </label> <input  class="input" name="psd" type="password">
+            </div>
+             <div class="item">
+                <label> Confirm password: </label> <input class="input" name="psd2" type="password">
+            </div>
+            <div class="item" >
+             <label> Security question: </label> <input  class="input" name="question" type="text">
+            </div>
+              <div class="item" >
+                <label> Answer: </label> <input class="input" name="answer" type="text">
+            </div>
+                <div class="item">
+                    <input class="button" type="submit" value ="Submit" >
+                    
+                    <img id="loading" class="loading_hidden" src="images/loading.gif">
+                </div>
+            </form>
+            
+            <div id="register_feedback" class="feedback">
+                
+            </div>
+            
+        </div>
+    </body>
+</html>

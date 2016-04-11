@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Account</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style/general.css">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript"  src='script/general.js'></script>
+        <script type="text/javascript"  src='script/cars.js'></script>
+        <script id="rented-car-template" type="text/html">
+        <table>
+            <tr>
+                <th>Picture</th><th>Detail</th><th></th>
+            </tr>
+            {{#block rented_car}}
+            <tr>
+                <td><img src="{{picture}}"></td> 
+                <td class="car_details"> 
+                    <div class="car_title">
+                        <div class="car_make">
+                            {{make}} | {{model}}
+                        </div>
+                        <div class="car_year">
+                            {{year}}
+                        </div>
+                    </div>
+                    <div class="car_size">
+                        Size: {{size}}
+                    </div>
+                    <div class="rental_ID">
+                        Rental #: {{rental_ID}}
+                    </div>   
+                    <div class="car_date">
+                        Rent date: {{rent_date}}
+                    </div>          
+                </td>
+                <td>
+                    <div class="return_car" data-rental-id="{{rental_ID}}">Return Car</div>
+                </td>
+
+            </tr>
+            {{#end block rented_car}}
+        </table>
+    </script>
+    <script id="returned-car-template" type="text/html">
+        <table>
+            <tr>
+                <th>Picture</th><th>Detail</th>
+            </tr>
+            {{#block returned_car}}
+            <tr>
+                <td><img src="{{picture}}"></td> 
+                <td class="car_details"> 
+                    <div class="car_title">
+                        <div class="car_make">
+                            {{make}} | {{model}}
+                        </div>
+                        <div class="car_year">
+                            {{year}}
+                        </div>
+                    </div>
+                    <div class="car_size">
+                        Size: {{size}}
+                    </div>
+                    <div class="rental_ID">
+                        Rental #: {{rental_ID}}
+                    </div>   
+                    <div class="car_date">
+                        Return date: {{return_date}}
+                    </div>          
+                </td>
+            </tr>
+            {{#end block returned_car}}
+        </table>
+    </script>
+    <script id="find-car-template" type="text/html">
+        <div class='search_item'>
+            <img src="{{picture}}">
+            <div class='car_make_background'>
+                <div class='car_make'>{{make}}</div>
+                <div class='car_model'>{{model}} | {{year}}</div> 
+            </div>
+            <div class='car_color'> Color: <div class='{{color}}'></div></div>
+            <div class='car_size'> Size: {{size}}</div>
+            <div class='car_rent' id='{{ID}}'> Rent Car </div> 
+        </div>
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="account">
+            <div class="welcome">
+                <a id="logout-link">Logout</a>
+                <a href="" id="username"></a> 
+                <!--user loading image location has moved to the search elements-->
+            </div>
+
+            <img src="images/car.png">
+            <p>Rent a Car!</p>
+
+        </div>
+        <div class="tabs" id="tabs">
+            <div class="tab_pressed"> Find Car
+                <div class="tab_detail"> 
+                    <div class="search_bar">
+                        <input id="find-car-input" placeholder="Type car make, model, year, color, etc."  class="search_field" type="text"><div id="find-car" class="search_button"><img src="images/glass.png"></div>
+                    </div>
+                    <img id="user_loading" class="user_loading_hidden" src="images/loading.gif"><!-- new location for user loading image-->
+                    <div id="search_results">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab"> Rented Cars
+                <div class="tab_detail_hidden"> 
+                    <div id="rented_cars">
+                    </div>
+                </div>
+            </div>
+            <div class="tab"> Returned Cars
+                <div class="tab_detail_hidden"> 
+                    <div id="returned_cars">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

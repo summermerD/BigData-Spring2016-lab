@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript"  src='script/general.js'></script>
+        <script type="text/javascript"  src='script/login.js'></script>
+    </head>
+    <body>
+        <h2>Welcome to recording studio reservation center! </h2>
+         <em> Here you can choose amongst our different recording rooms as per your need and requirement from the wide choices of time slots and days with the help of a User-friendly environment.</em></p>
+    <p style="font-style: italic">
+        So come one and come all !! Fulfill your dream of singing at one and only - <strong>POWER4 RECORDING STUDIOS !!</strong> Login first!!</p>
+        <div id="userLogin" class="login">
+            <form id="login_form" method="POST" enctype="multipart/form-data">
+                <h2 align="center" >User login</h2>
+            <div class="item">
+                <label> Username: </label> <input class="input" name="name" type="text">
+            </div>
+            <div class="item" >
+                <label> Password: </label> <input  id="password-input" class="input" name="password" type="password">
+            </div>
+                <div class="item">
+                    <div id="search-button" class="button" >Login</div>
+                    <p> Not a user?</p>
+            <a href="register.html"> click here to create it. </a>
+            <p> Forgot your password?</p>
+            <a href="retrieve.html"> click here to retrieve it. </a>
+                    <img id="loading" class="loading_hidden" src="images/loading.gif">
+                </div>
+            </form>
+            
+            <div id="login_feedback" class="feedback">
+                
+            </div>
+            
+        </div>
+        <div id='adminLogin' class="login">
+            <form id="login_form2" method="POST" enctype="multipart/form-data">
+                <h2 align="center" >Administrator login</h2>
+            <div class="item">
+                <label> Username: </label> <input class="input" name="name" type="text">
+            </div>
+            <div class="item">
+                <label> Password: </label> <input  id="password-input" class="input" name="password" type="password">
+                <br>
+            </div>
+                <div class="item">
+                <img id="loading" class="loading_hidden" src="images/loading.gif"><div id="search-button2" class="button" >Login</div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </form>
+            
+            <div id="login_feedback2" class="feedback" style = "height:59px;">
+                
+            </div>
+            
+        </div>
+           <p>
+       
+
+    </body>
+</html>
+

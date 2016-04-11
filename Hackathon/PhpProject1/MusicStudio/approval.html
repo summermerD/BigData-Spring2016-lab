@@ -1,0 +1,76 @@
+<!--<html>
+<head>
+    <title> Reservation Details:></title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<h1>Customers</h1>
+<table style="width:100%">
+	<tr>
+		<th>Booking_Id</th>
+		<th>Username</th>
+		<th>Time Of Request</th>
+		<th>From</th>
+		<th>To</th>
+		<th>Priority</th>
+                <th>Decision</th>
+                <th> <div id ='Approval' class = 'button'>Approve</div> </th>
+	</tr>
+        
+	
+</table>-->
+
+
+<html>
+    <head>
+        <title>My Account</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style/general.css">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript"  src='script/general.js'></script>
+        <script type="text/javascript"  src='script/approval.js'></script>
+         <script id="find-request-template" type="text/html">
+
+        <div class='search_item'>
+            
+            <div class='booking_background'>
+                <div class='user'>Studio No.: {{Studio_ID}}</div>
+                <div class='user'>Booking ID: {{Booking_ID}}</div>
+                <div class='From'>From: {{StartFrom}} | To: {{EndTo}}</div> 
+            </div>
+            <div class='userFeature'> Time requested: <div class='{{Request_Time}}'></div></div>
+            <div class='userFeature'> Priority: {{priority}}</div>
+            <div class='approval' id='{{Booking_ID}}'> Approve </div> 
+            <div class='decline' id='{{Booking_ID}}'> Decline </div> 
+
+        </div>
+    </script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="account">
+            <div class="welcome">
+                <a id="logout-link">Logout</a>
+                <a href="" id="username"></a> 
+                <!--user loading image location has moved to the search elements-->
+            </div>
+
+            <img src="images/studio.jpg">
+            <p style = "font-style:italic">Reserve a music studio!</p>
+
+        </div>
+        <div id="search_results"></div>
+
+    </div>
+
+</body>
+
+</html>
