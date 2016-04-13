@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="library">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/library/weka.jar!/" />
+      <root url="jar://$PROJECT_DIR$/library/ACE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/library/jAudio-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/library/UtilityClasses.jar!/" />
+      <root url="jar://$PROJECT_DIR$/library/xerces.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
